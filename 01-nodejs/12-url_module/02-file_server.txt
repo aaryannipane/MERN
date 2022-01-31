@@ -1,0 +1,10 @@
+Node.js File Server
+Now we know how to parse the query string, and in the previous chapter we learned how to make Node.js behave as a file server. Let us combine the two, and serve the file requested by the client.
+
+Create two html files and save them in the same folder as your node.js files.
+
+Create a Node.js file that opens the requested file and returns the content to the client. If anything goes wrong, throw a 404 error:
+
+then run server 
+then open http://localhost:8080/summer.html
+or http://localhost:8080/winter.html

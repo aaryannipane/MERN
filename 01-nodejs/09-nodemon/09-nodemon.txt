@@ -1,0 +1,8 @@
+nodemon is used to restart server automaticaly when we modify our file we don't have to manualy restart server 
+
+to install nodemon we have to write below comand in terminal
+$ npm install -g nodemon
+here -g is  used to install nodemon globally
+
+to use nodemon write below command
+$ nodemon appName.js

@@ -1,0 +1,4 @@
+watch 03-npm_init.txt file first
+then create main.js(entry point) file
+write code inside it 
+run that file using node fileName.js command

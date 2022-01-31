@@ -1,0 +1,29 @@
+Use the application generator tool, express-generator, to quickly create an application skeleton.
+
+
+1) to use this application generator we have to install express-generator globaly using below command
+>> npm install express-generator -g
+
+2) then display the command options with the -h option
+>> express -h
+
+3) to create app with name ejsapp in current directory and view engine as ejs write below command
+>> express --view=ejs ejsapp
+        OR for pug use --view=pug
+
+4) now cd to ejsapp then run command "npm install" 
+
+5) we have to work in ejsapp/views/index.ejs   file
+
+6) in ejsapp run command to start server
+>> set DEBUG=ejsapp:* & npm start
+
+7) then load to http://localhost:3000/
+
+8) now to change the express word on the webpage  goto ejsapp/routes/index.js there will be res.render()
+inside it there is object that contains title value as express that we can change to any value
+
+9) now we can create new variables and add value of it in that object that is in routes/index.js 
+ and use that variables in our index.ejs file
+
+10) ejs is same like php 

@@ -1,0 +1,5 @@
+write below command in bash/cmd to see version of node and npm(node package manager)
+
+1) node -v
+
+2) npm -v

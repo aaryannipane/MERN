@@ -1,0 +1,5 @@
+To run node type "node" in bash and write javascript code (to exit node write .exit)
+
+            or
+
+make any_name.js file and run it using "node 02-name.js" in bash

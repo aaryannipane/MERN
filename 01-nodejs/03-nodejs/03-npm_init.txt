@@ -1,0 +1,13 @@
+when we use node in our project then we have to initialize npm  in that folder using command which will  provide dependencies
+
+-> npm init
+
+then give package name (any_name)
+give version
+give description
+give entry_point: default js file name
+no test command
+no git repo
+no keyword
+give author name
+no license or use (MIT)

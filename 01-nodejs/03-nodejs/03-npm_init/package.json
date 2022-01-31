@@ -1,0 +1,11 @@
+{
+  "name": "03-npm_init",
+  "version": "1.0.0",
+  "description": "nothing to describe",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aryan Nipane",
+  "license": " MIT"
+}
