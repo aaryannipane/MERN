@@ -1,0 +1,35 @@
+Express Application Generator Tool
+
+    Use the application generator tool, express-generator, to quickly create an application
+    skeleton.
+
+    npx express-generator --view=ejs myapp
+        // OR 
+    npm install -g express-generator
+    express-view=ejs myapp
+
+    then goto myapp folder 
+    
+    npm install
+
+    set DEBUG=myapp:* & npm start
+
+
+
+myapp -Application/Project Folder
+
+bin - The bin folder contains the exccutable file that starts your app. It starts the
+server (on port 3000, if no alternative is supplied) and sets up some basic error
+handling.
+
+public - Everything in this folder is accessible to people connecting to application.
+We can put JavaScript, CSS, images, and other assets.
+
+routes - We can put all our route files. The generator creates two files, index.js and
+users.js.
+
+views - The views folder is where we have files used by your templating engine.
+
+app.js File - This file creates an express application object (named app, by
+convention), sets up the application with various settings and middleware, and then
+exports the app from the module.

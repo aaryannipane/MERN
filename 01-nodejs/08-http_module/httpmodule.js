@@ -10,8 +10,8 @@ const server = http.createServer(function(req, res){
     res.writeHead(200, {"content-type":"text/plain"});
     // res.writeHead(200, {"content-type":"text/html"});   // for html coding
 
-        // prints on screen
-        res.write("<h1>Server is on...\nlistening to port 3000</h1>");
+    // prints on screen
+    res.write("<h1>Server is on...\nlistening to port 3000</h1>");
 
     // end of response
     res.end();

@@ -1,0 +1,12 @@
+first install mongodb from official website
+then go to c: drive and create folder data and inside data folder create folder db
+then go to programFiles/mongodb/server/3.2/bin path and open terminal in it
+then type command mongod 
+then open new terminal and type command mongo then mongodb shell will start 
+
+to create database :- use databaseName
+to create collection :- db.createCollection('collectionName')
+to insert data in collection :- db.collectionName.insert({key: 'value', key: 'value'})
+to show collections :- show collections
+to view data inside any collection :- db.collectionName.find()
+

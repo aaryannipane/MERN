@@ -1,0 +1,43 @@
+FIRST EXPRESS APP 
+
+const express = require('express');  // old method
+
+import express from 'express';  // es6 method 
+
+const app = express();
+
+const port = process.env.PORT || '3000';
+
+app.get('/', (req, res)=>{
+    res.send("Hello World);
+})
+
+app.listen(port, ()=>{
+    console.log(`server running on port ${port}`);
+})
+
+
+
+express()-The express() function is a top-level function exported by the express
+module.
+
+const app = express()
+The app returned by express() is in fact a JavaScript Function, designed to be passed to Node's HTTP servers as a callback to handle requests.
+This makes it easy to provide both HTTP and HTTPS versions of your app with the
+same code base, as the app does not inherit from these.
+
+app.listen() - It binds and listens for connections on the specified host and port.
+If port is omitted or is 0, the operating system will assign an arbitrary unused port,
+which is useful for cases like automated tasks.
+
+
+to use new JavaScript 
+open package.json file 
+then add 
+
+"type": "module",
+
+when we add this then require() function will give error in our js file 
+so we have to change that line to 
+
+import express from 'express'

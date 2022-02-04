@@ -1,0 +1,17 @@
+INSTALL EXPRESS JS
+    npm install express
+
+UNINSTALL EXPRESS JS 
+    npm uninstall express 
+
+
+now init npm with 
+    npm init -y
+
+then install express 
+    npm i express
+
+then go to index.js file
+
+you can install nodemon for dev dependency
+    npm install -D nodemon 

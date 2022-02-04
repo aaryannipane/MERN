@@ -1,0 +1,55 @@
+INTRODUCTION TO MONGODB
+    MongoDB is a document database designed for case of development and scaling. It is one of the most powerful
+    NoSQL system and database. Being a NoSQL means that it does not use the usual rows and columns. This
+    database uses a document storage format called BSON which is a binary style of JSON documents.
+
+    Example:-
+        {
+            id: Objectld("765uhghj87987gh"),
+            name: "Sonam",
+            age: 27,
+        }
+        {
+            id: Objectld(jbghj675 gfhg658"),
+            name: "Rahul",
+            age: 29,
+        }
+
+    
+    Database - In MongoDB, databases hold one or more collections.
+
+    Collection- MongoDB stores documents in collections. Collections are analogous to tables in relational databases.
+
+    Document- A document is a set of key-value pairs. The documents in a single collection do not need to have the same set of fields and the data type for a field can differ across documents within a collection.
+
+
+MONGODB DEPLOYMENT OPTIONS:-
+
+    Locally Hosted Deployments
+        MongoDB Community
+        MongoDB Enterprise Advance
+
+    Cloud Hosted Deployment
+        MongoDB Atlas
+
+
+SOME MORE TERMS USED:- 
+
+    mongo - mongo is the command-line shell that connccts to a specific instance of mongod. When you run mongo with 
+    no parameters it defaults to connecting to the localhost on port 27017.
+
+    mongod - mongod is the primary daemon process for the MongoDB system. It handles data requests, manages data 
+    accesS, and pertorms background management operations.
+
+    mongos - For a sharded cluster, the mongos instances provide the interface between the client applications and 
+    the sharded cluster. The mongos instances route queries and write operations to the shards. From the perspective 
+    of the application, a mongos instance behaves dentically to any other MongoDB instance.
+
+    mongosh- The MongoDB Shell, mongosh, is a fully functional JavaScript and Node.js 14.x REPL environment for
+    interacting with MongoDB deployments. You can use the MongoDB Shell to test queries and operations directly with 
+    your database.
+
+
+*now install mongodb and read 1.txt file for setup 
+or you can download mongodb and mongosh shell 
+

@@ -1,0 +1,87 @@
+SHOW DATABASE IN MONGODB
+    -> show dbs 
+
+CREATE DATABASE - creates and switch to schooldb database
+    -> use schooldb
+
+the database will not visible using 'show dbs' command until we create collection inside that database 
+
+CHECK CURRENT DATABASE
+    -> db 
+
+SWITCH DATABASE 
+    -> use test
+
+DELETE DATABASE - go to database first using 'use' command then use below caommand
+    -> db.dropDatabase()
+
+CREATE COLLECTION AND INSERT DOCUMENT 
+    -> db.<collection-name>.insertOne({"key":"value", "key2":"value2"})
+
+CREATE COLLECTION WITH RULES
+    -> db.createCollection("<collection-name>",{validator:{$jsonSchema:{bsonType:"object", required:[fieald-names], properties:{fiead-name:{bsonType: dataType, description: message to user}, fieald-name2:{same}}}}})
+
+    EXAMPLE:- 
+        db.createCollection("teacher",{validator:{$jsonSchema:{bsonType:"object", required:["name", "age"], properties:{name:{bsonType: "string", description: "Must be a String and is required"}, age:{bsonType:"int", description:"Must be an Integer and is required"}}}}})
+
+CREATE COLLECTION ONLY
+    -> db.createCollection("<collection-name>")
+
+SHOW COLLECTIONS 
+    -> show collections
+
+GET COLLECTION RULES
+    -> db.getCollectionInfos({name:"<collection-name>"})
+
+DELETE COLLECTION
+    -> db.<collection-name>.drop()
+
+INSERT SINGLE DATA IN COLLECTION 
+    -> db.<collection-name>.insertOne({key:"value", key2:"value2"})
+
+INSERT MANY DATA IN COLLECTION 
+    -> db.<collection-name>.insertMany([{key:"value", key2:"value2"}, {key:"value", key2:value2}])
+
+
+RETIRVE ALL DATA FROM COLLECTION
+    -> db.<collection-name>.find()
+
+RETIRVE ALL DATA FROM COLLECTION
+    -> db.<collection-name>.find().pretty()
+
+RETIRVE ONE DATA FROM COLLECTION
+    -> db.<collection-name>.findOne()
+
+
+RETIRVE LIMITED DATA FROM COLLECTION
+    -> db.<collection-name>.find().limit(x)
+    x = is number of document to be retrieaved
+
+RETIRVE DATA FROM COLLECTION BASED ON FIEALD 
+    -> db.<collection-name>.find({fiealdname: "value"})
+    
+    EXAMPLE:-   
+        db.student.find({name: "Aryan", age: 19})
+
+UPDATE SINGLE DOCUMENT IN COLLECTION 
+    -> db.<collection-name>.updateone({key:value}, {$set:{key:value, key2:value2}})
+
+    EXAMPLE:- 
+        db.teacher.updateone({name:"Aryan"}, {$set:{name:"Geeky", age:20}})
+    it will find field with name = aryan than it will update that document 
+
+UPDATE MULTIPLE DOCUMENT IN COLLECTION
+    -> db.<collection-name>.updateMany({key:value}, {$set:{key:value, key2:value2}})
+
+DELETE ONE DOCUMENT IN COLLECTION
+    -> db.<collection-name>.deleteOne({key:value})
+    here, key:value is condition
+
+DELETE MANY DOCUMENT IN COLLECTION
+    -> db.<collection-name>.deleteMany({key:value})
+
+DELETE DATABASE - first go inside database you want to delete 
+    -> db.dropDatabase()
+
+QUIT TERMINAL OF MONGO 
+    -> quit()

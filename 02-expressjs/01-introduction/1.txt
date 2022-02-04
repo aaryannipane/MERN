@@ -1,0 +1,9 @@
+INTRODUCTION TO EXPRESS JS
+
+Express Js is Fast, unopinionated, minimalist web framework for Node.js.
+ - Create Static, Dynamic and Hybrid Web App
+ - Fast and Easy
+ - Routing
+ - Middleware
+ - REST API
+ - Very Popular
