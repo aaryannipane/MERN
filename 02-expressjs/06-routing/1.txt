@@ -1,0 +1,115 @@
+ROUTING 
+
+Routing refers to determining how an application responds to a client request to a
+particular endpoint, which is a URl (or path) and a specific HTTP request method
+(GET, POST, and so on).
+
+Each route can have one or more callback functions, which are executed when the route
+is matched.
+
+Syntax:- app.method(path, callback)
+        app.method(path, [callbackl, callback2, ...])
+        app.method(path, [callback1, callback2, ..], callback)
+
+    app - is an instance of express.
+    method - is an HTTP request method, in lowercase.
+    path - is a path on the server.
+    callback - is the function executed when the route is matched.
+
+example:- 
+    const app = express()
+    app.get('/', (req, res)=>{
+        res.send('Hello World!');
+    })
+
+    app.post('/', (req, res)=>{
+        res.send('hello')
+    })
+
+Methods:- 
+    GET - Retrieve Data
+    POST - Create/Insert Data
+    PUT - Completely Update Data
+    PATCH - Partially Update Data
+    DELETE - Delcte Data
+    ALL - Any HTTP Request Method
+
+example:- 
+    app.get('/student/all', (req, req)=>{
+        res.send('All Student')
+    })
+
+    app.post('/student/create', (req, res)=>{
+        res.send('student created)
+    })
+
+    app.put('/student/update', callback)
+    app.delete('/student/delete', callback)
+
+    app.all(path, [callback 1, callback2,..], callback)- This method is like the standard
+    app.METHOD() methods, except it matches all HTTP verbs.
+    This method is useful for mapping "global" logic for specific path prefixes or arbitrary
+    matches.
+    Examples:-
+        app.all( '/sabkuch', (req, res, next)=>{
+            console.log('Accessing the secret section..')
+            next() // pass control to the next callback
+        }
+        app.all("*", require Authentication, loadUser)
+        app.all("/api/*", require Authentication)
+
+
+PATH:-
+
+    Path - Route paths can be strings, string patterns, or regular expressions. Query strings
+    are not part of the route path.
+
+    The characters ?, +, *, and () are subsets of their regular expression counterparts.
+    The hyphen (-) and the dot (.) are interpreted literally by string-based paths.
+    If you need to use the dollar character ($) in a path string, enclose it escaped within ([
+    and ])
+    Example:
+        www.geekyshows.com/data/$book
+        app.get("/data/([\$])book", callback)
+
+
+CALLBACK:- 
+    Callback- Route Callbacks can be in the form of a function, an array of functions, or
+    combinations of both.
+
+    You can provide multiple callback functions that behave like middleware to handle a
+    request. The only exception is that these callbacks might invoke next('route') to bypass
+    the remaining route callbacks.
+
+    
+    
+    Example:
+        app.get('/cbexample1', (req, res) => {  // req - The request object.
+            res.send('One Callback Example')    // res - The response object.                
+        }                                       // next - It is indicating the next middleware function.
+
+MORE THAN ONE CALLBACK FUNCTION 
+    app.get("/cbexample2", (req, res, next)=>{
+        console.log(First Callback)
+    next()
+    },(req, res)=>{
+        console.log('Second Callback')
+        res.send('More than One Callback Example')
+    })
+
+
+An array of Callback functions
+    const cbl = (req, res, next)=> {
+        console.log(First Callback)
+        next()
+    }
+
+    const cb2 = (req, res, next)=>{
+        console.log(Second Callback')
+        next()
+    
+        }
+    const cb3 =(req, res, next) =>{
+    res.send('An Array of Callback") }
+
+    app.get('/cbexample3', [cbl, cb2, cb3])
