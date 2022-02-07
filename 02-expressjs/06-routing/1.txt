@@ -108,8 +108,10 @@ An array of Callback functions
         console.log(Second Callback')
         next()
     
-        }
+    }
+
     const cb3 =(req, res, next) =>{
-    res.send('An Array of Callback") }
+        res.send('An Array of Callback") 
+    }
 
     app.get('/cbexample3', [cbl, cb2, cb3])
