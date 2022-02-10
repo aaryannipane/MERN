@@ -1,0 +1,46 @@
+WHY DO WE NEED ROUTER:- 
+
+    app.js
+    // All Student Routes
+    app.get( '/student/all', (req, res) =>{
+        res.send("All Student") })
+    app.post('/student/create', (req, res)=>{
+        res.send('New Student Created") })
+    app.put('/student/update', (req, res)=>{
+        res.send("Student updated") })
+    app.delete('/student/delete', (req, res) >{
+        res.send(' Student Deleted') })
+
+
+ROUTER :- 
+
+    Router class is used to create modular, mountable route handlers.
+    ARouter instance is a complete middleware and routing system.
+    Every Express application has a built-in app router.
+
+    Steps:
+        -Create Router Module - routes/students.js
+        -Create Router instance
+            const router = express.Router()
+        -Define Routes using router object
+            router.get('/', function(req, res) {
+                res.send('Hello World')
+            })
+
+        -Export router
+            module.exports = router 
+
+
+    Create/Open app.js
+    -Import Router Module
+        const stu = require("./routes/students.js")
+    -Load Router Module
+        app.use('/vidyarthi', stu)
+        
+
+APP.USE() METHOD :- 
+    app.use([path], [callback1, callcakc2,...], callback) - It mounts the specified middleware
+    function or functions at the specified path: the middleware function is executed when the base of
+    the requested path matches path.
+    A router is valid middleware.
+    An Express app is valid middleware.

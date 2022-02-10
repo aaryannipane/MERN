@@ -115,3 +115,35 @@ An array of Callback functions
     }
 
     app.get('/cbexample3', [cbl, cb2, cb3])
+
+
+Chained Route Callbacks
+    app.route(path) - It returns an instance of a single route, which you can then use to handle HTTP
+    verbs with optional middleware. Use app.route) to avoid duplicate route names.
+
+    app.route('/student')
+    .get(function (req, res) {
+        res.send('AIl Student')
+    })
+    .post(function (req, res) {
+        res.send('Add New Student')
+    })
+    .put(function (req, res){
+        res.send('Update Student')
+    })
+
+    SECOND TYPE :- 
+
+    app.route('/student')
+    .all(function (req, res){
+        console.log('runs for all HTTP verbs first')
+    })
+    .get(function (req, res){
+        res.send('All Student')
+    })
+    .post(function (req, res){
+        res.send('Add New Studet')
+    })
+    .put(function (req, res) {
+        res.send('Update Student')
+    })

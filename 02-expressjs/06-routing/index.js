@@ -69,8 +69,34 @@ const c3 = (req, res)=>{
 app.get('/callback3', [c1, c2, c3]);
 
 
+// chained route callbacks
 
+// app.route('/student')
+//     .get(function (req, res) {
+//         res.send('AIl Student')
+//     })
+//     .post(function (req, res) {
+//         res.send('Add New Student')
+//     })
+//     .put(function (req, res){
+//         res.send('Update Student')
+//     })
 
+// use full in api validations
+
+// app.route('/student')
+//     .all(function (req, res){
+//         console.log('runs for all HTTP verbs first')
+//     })
+//     .get(function (req, res){
+//         res.send('All Student')
+//     })
+//     .post(function (req, res){
+//         res.send('Add New Studet')
+//     })
+//     .put(function (req, res) {
+//         res.send('Update Student')
+//     })
 
 
 
