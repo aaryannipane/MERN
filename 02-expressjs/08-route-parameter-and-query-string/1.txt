@@ -1,0 +1,54 @@
+ROUTE PARAMETER
+
+Route parameters are named URL segments that are used to capture the values specified at their
+position in the URL.
+The captured values are populated in the req.params object, with the name of the route
+parameter specified in the path as their respective keys.
+The name of route parameters must be made up of "word characters" ([A-Za-z0-9_]).
+
+Examples:-
+/student/:id                            // www.example.com/student/12
+/product/:category/:id                  // www.example.com/product/mobile/23
+/product/order/:year/and/:month         // www.example.com/order/2021/and/oct
+/train/:from-:to                        // www.example.com/train/ranchi-dhanbad
+/location/:state.:city                  // www.example.com/location/jh.ranchi
+
+req.params = {"state":"jh", "city":"ranchi"}
+
+
+
+ROUTE PARAMETER WITH REGX:- 
+
+To have more control over the exact string that can be matched by a route parameter, you can
+append a regular expression in parentheses (()).
+
+Example:
+/student/:sid([O-9]{12})                      // www.example.com/student/12
+/product/order/:year/and/:month([a-z])       // www.example.com/order/2021/and/oct
+
+to test express route 
+http://forbeslindesay.github.io/express-route-tester/
+
+
+ROUTE PARAMETER :- 
+    app.param()- The app.param() function is used to add the callback triggers to route parameters.
+    It is commonly used to check for the existence of the data requested related to the route
+    parameter.
+    All param callbacks will be called before any handler of any route in which the param occurs,
+    and they will each be called only once in a request-response cycle, even if the parameter is
+    matched in multiple routes.
+
+    Syntax:-
+    app.param(name, callback)
+    app.param([name1, name2, ....], callback)
+    id name is an array , the callback trigger is register for each parameter declared in it ,
+    in the order in which they are declared
+
+
+QUERY STRING (very important)
+
+/product                                // www.example.com/product?category=mobile
+req.query = {"category":"mobile"}        
+
+/product                                // www.example.com/product?category=mobile&id=13
+req.query = {"category":"mobile", "id":13}
