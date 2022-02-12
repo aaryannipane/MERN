@@ -1,0 +1,95 @@
+TEMPLATE ENGINE 
+
+    A template engine enables you to use static template files in your application.
+    At runtime, the template engine replaces variables in a template file with actual values,
+    and transforms the template into an HTML file sent to the client.
+    This approach makes it easier to design an HTML page.
+    - Ejs
+    - Pug
+    - Mustache
+    - Nunjucks
+    - Dust
+    https://expressjs.com/en/resources/template-engines.html
+
+
+
+SETUP APPLICATION FOR TEMPLATE ENGINE
+    Install Template Engine
+    npm install ejs
+
+    app.js
+    -Setup the Directory where template files are located
+    app.set('views, '/views')
+    -Setup the Template Engine to use
+    app.set('view engine', 'ejs')
+
+
+CREATING TEMPLATE FILES 
+    for ejs engine 
+    views/
+        index.ejs
+        about.ejs
+        contact.ejs
+
+
+
+CREATING ROUTES FOR TEMPLATE FILES 
+
+    app.js
+    app.get('/', function (req, res){
+        res.render('index')
+    })
+
+    routes/web.js
+    router.get('/', function (req, res) {
+    res.render( index')
+    })
+
+    router.get( '/about', function (req, res) {
+        res.render('about')
+    })
+
+    NOTE :- 
+        - If the view engine property is not set, you must
+        specify the extension of the view file.
+        app.set(view engine', 'ejs')
+
+        router.get(", function (req, res) {
+            res.render('index.ejs")
+        })
+
+        - When you make a request to the home page, the
+        index.ejs file will be rendered as HTML.
+
+    
+render() :- 
+    res.render()-It renders a view and sends the rendered HTML string to the client.
+    Syntax:- res.render(view, [, locals], [, callback])
+
+    view - The view argument is a string that is the file path of the vicw file to render.
+
+    This can be an absolute path, or a path relative to the views setting.
+
+    If the path does not contain a file extension, then the view engine setting determines the
+    file extension.
+
+    locals - It's an object whose properties define local variables for the view.
+
+    callback - It's a function. If provided, the method returns both the possible error and
+    rendered string, but does not perform an automated response. When an error occurs, the
+    method invokes next(err) internally.
+
+    Syntax:- res.render(view, [, locals], callback])
+
+    Example:- 
+
+    - Send the rendered view to the client
+    res.render('index')
+
+    - Pass a local variable to the view
+    res.render('index', { name: "Sonam" })
+
+    - The rendered HTML string has to be sent explicitly
+    res.render(index', function (err, html){
+        res.send(html)
+    })
