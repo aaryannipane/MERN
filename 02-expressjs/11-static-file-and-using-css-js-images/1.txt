@@ -1,0 +1,47 @@
+STATIC FILES 
+
+    CSS files, Javascript Files, image files, video files ete are considered as static files in
+    Express JS.
+    To serve static files such as images, CSS files, and JavaScript files, use the
+    express.static built-in middleware function in Express.
+
+    Syntax:- express.static(root, [options])
+    app.js 
+    Example:- app.use(express.static('public'))
+    http://localhost:3000/css/style.css
+
+
+    To create a virtual path prefix (where the path does not actually exist in the file system)
+    for files that are served by the express.static function, specity a mount path for the static
+    directory, as shown below:
+    app.js 
+    app.use('/static', express.static('public'))
+    http://localhost:3000/static/css/style.css
+
+    The path that you provide to the express.static function is relative to the directory from
+    where you launch your node process. If you run the express app from another directory,
+    it's safer to use the absolute path of the directory that you want to serve:
+    app.use('/static', express.static(join(process.cwd(), 'public')))
+
+
+OPTIONS IN express.static(root, [options])
+
+    const options ={
+        dotfiles: 'ignore',
+        etag: false,
+        extensions: ['htm', "html"],
+        index: false,
+        maxAge: '1d',
+        redirect: false,
+        setHeaders: function (res, path, stat) {
+            res.set(x-timestamp', Date.now())
+        }
+    }
+    app.use(express.static('public', options)
+
+
+dotfiles
+"allow" - No special treatment for dotfiles.
+"deny" - Deny a request for a dotfile, respond with 403, then call next).
+"ignore" - Act as if the dotfile does not exist, respond with 404, then call next0.
+NOTE: With the default value, it will not ignore files in a directory that begins with a dot.
