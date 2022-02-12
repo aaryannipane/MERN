@@ -1,0 +1,33 @@
+CONTROLLER 
+
+    Controllers can group related request handling logic separately. Instead of defining all
+    of your request handling logic as callback in route or route files, you may wish to
+    organize this behavior using Controller modules.
+
+    app.js
+    app.get( '/student/all', (req, res)=>{
+        res.send('All Student')
+    }))
+
+    routes/student.js
+    router.get('/all', (req, res)=>{
+        res.send("All Student")
+    })
+
+    TO 
+
+    controllers/studentController.js
+    const allStudent = (reg, res)=>{
+        res.send( All Student')
+    }
+
+    export { allStudent }   // for es6
+    module.export= { allStudent}  // for old
+
+
+    then write in 
+    app.js 
+    app.get('/student/all', allStudent)
+
+    routes/student.js 
+    router.get('/all', allStudent)

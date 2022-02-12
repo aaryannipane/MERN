@@ -1,0 +1,28 @@
+VIEW 
+    Views contain the HTML served by your application and separate your application logic
+    from your presentation logic. Views are stored in the views directory.
+
+    Creating View :--
+    views/index.html 
+
+    <html>
+        <body>
+            <h1>Hello Home Page</h1>
+        </body>
+    </html>
+
+
+CREATE ROUTE FOR VIEW 
+
+    Example:
+    import {join} from 'path'
+    app.get('/', (req, res)=> {
+        res.sendFile(join(process.cwd(), 'views', 'index.html'))
+    })
+
+    process.cwd() - process is node's global object, and .cwd() returns where node is
+    running.
+
+    app.sendFile() - This is used to transfers the file at the given path. Sets the Content-
+    Type response HTTP header field based on the filename's extension. Unless the root
+    option is set in the options object, path must be an absolute path to the file.
