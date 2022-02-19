@@ -9,7 +9,7 @@ const app = express()
 app.set('views', './views')
 
 // set up the template engine use
-app.set('view engine', 'ejs')
+app.set('view engine', ejs)
 
 // load static file
 app.use('/static', express.static(join(process.cwd(), 'public')))

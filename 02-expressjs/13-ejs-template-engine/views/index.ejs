@@ -1,0 +1,72 @@
+<%- include('./partials/header.ejs', {'title':'Home'}) %>
+
+    <h1>EJS TEMPLATE ENGINE</h1>
+    <!-- displaying variable -->
+    <%= name %>
+
+    <!-- creating variable -->
+    <% var id = 20; %>
+        <!-- display variable -->
+        <%= id %>
+    
+    <!-- comment -->
+    <%# comment will not rendered in the html %>
+
+    <!-- if  -->
+    <% if (name) { %>
+        <h1>name exist <%= name %></h1>
+    <% } %>
+
+    <!-- if else condition -->
+    <% if(id==10) { %>
+        <p>id found</p>
+    <% } else { %>
+        <p>id not found</p>
+    <% } %>
+
+    <!-- if else if condition -->
+    <% if(id==10) { %>
+        <p>id found 10</p>
+    <% } else if(id==20){ %>
+        <p>id found 20</p>
+    <% } else { %>
+        <p>id not found</p>
+    <% } %>
+
+    
+<!-- FOR LOOP -->
+<% for(i=0; i<=5; i++){ %>
+    <p><%= i %></p>
+<% } %>
+
+<!-- FOR IN LOOP -->
+<% for(var key in data){ %>
+    <strong><%= data[key] %> </strong>
+<% } %>
+<hr>
+<!-- FOR OF LOOP -->
+<% for(var item of data){ %>
+    <strong><%= item %> </strong>
+<% } %>
+
+<!-- WHILE LOOP -->
+<% var i = 1; %>
+<% while(i<=4){ %>
+    <p><%= i %></p>
+    <% i++ %>
+<% } %>
+
+<!-- FOREACH LOOP -->
+<% data.forEach((item)=>{ %>
+    <em><%= item %></em>
+<% }) %>
+
+<hr>
+
+<!-- INBUILT FUNCTION CALL -->
+<% var currentDate = new Date(); %>
+<strong><code><%= currentDate %></code></strong>
+
+<div class="box"></div>
+
+<%- include('./partials/footer.ejs') %>

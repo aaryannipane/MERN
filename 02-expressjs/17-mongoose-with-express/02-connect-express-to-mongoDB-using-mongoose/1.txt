@@ -1,0 +1,49 @@
+CONNECT MONGO DB USING MONGOOSE
+
+connect)-Mongoose requires a connection to a MongoDB database. You can connect to a locally hosted
+database with mongoOSe.connectO
+
+Syntax:- connect(url, options, callback)
+
+    url -It's a String used as connection uri.
+    options - It's an object passed down to the MongoDB driver's connect() function.
+    callback It's a callback function.
+
+Example:-
+    mongoose.connect("mongodb://localhost:2701 7/schooldb")
+    mongoose.comnet("mongodb:/localhost:27017/schooldb",{
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    })
+
+EXAMPLE FOR LOWER VERSION:- 
+    const conn =  mongoose.createConnection('mongodb://localhost:27017/test', { useMongoClient: true });
+mongoose.Promise = global.Promise;
+
+
+const options={
+    useNewUrlParser: true,
+    useUnificdTopology: true
+}
+
+mongoose.connet("mongodb://localhost:27017/schooldb", options);
+
+user It's String
+pass-It's String
+dbName-It's String
+authSource- It's String
+autolndex- It's Boolean
+
+
+EXAMPLE:- 
+
+const options= {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    user: 'geekyshows',
+    pass: merapassword',
+    dbName: 'schooldb,
+    authSource: 'schooldb'
+}
+
+mongoose.connect("mongodb://localhost:27017", options);

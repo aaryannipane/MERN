@@ -1,0 +1,162 @@
+MIDDLEWARE
+
+Middleware functions are functions that have access to the request object (req), the response object
+(res), and the next function in the application's request-response cycle.
+The next function is a function in the Express router which, when invoked, executes the middleware
+succeeding the current middleware.
+Middleware functions can perform the following tasks:
+    - Execute any code.
+    - Make changes to the request and the response objects.
+    - End the request-response cycle.
+    - Call the next middleware in the stack.
+
+
+app-js
+    app.use(function(req, res, next) {
+        console.log('Logged');
+        next();
+    })
+
+
+routes/student.js
+    router.use(function (req, res, nex){
+        console.log('Logger')
+        next()
+    })
+
+
+PREFERED WAY TO ADD MIDDLEWARE
+
+middlewares/logger-middleware.js
+    var myLogger = function (req, res, next) {
+        console.log('Logged')
+        next();
+    }
+
+app.js
+    import myLogger from './middleware/logger-middleware.js'
+    app.use(mylLogger)
+
+
+USING MIDDLEWARE 
+    - Application Level Middleware
+    - Router Level Middleware
+
+APPLICATION LEVEL MIDDLEWARE
+    Bind application-level middleware to an instance of the app object by using the app.use() and
+    app.METHOD() functions, where METHOD is the HTTP method of the request that the middleware
+    function handles (such as GET, PUT, ór POST) in lowercase.
+
+    A middleware function with no mount path. The function is executed every time the app receives a
+    request.
+
+EXAMPLE:-   
+    app.use(function (req, res, next) {
+        console.log('Logged')
+        next()
+    })
+
+    WITH MANY MIDDLEWARE
+
+    app.use(function (req, res, next) {
+        console.log('Logged 1')
+        next()
+    }, function (req, res, next) {
+        console.log('Logged 2')
+        next()
+    })
+
+
+PREFERED WAY 
+
+middlewares/logger-middleware.js
+    var myLogger = function (req, res, next) {
+        console.log("Logged")
+        next()
+    }
+
+app.js
+    import myLogger from './middlewares/logger-middleware.js'
+    app.use(myLogger)
+
+
+
+
+APPLICATION LEVEL MIDDLEWARE:-
+
+A Middleware function mounted on the /about path. The function is executed for any type of HTTP
+request on the /about path.
+
+app.use('/about', function (req, res, next) {
+    console.log('Logged')
+    next()
+})
+
+PREFERED WAY
+
+middlewares/logger-middleware.js
+    var myLogger = function (req, res, next){
+        console.log('Logged')
+        next()
+    }
+
+app.js
+import myLogger from './middlewares/logger-middleware.js'
+app.use('/about', myLogger)
+
+
+
+ROUTER LEVEL MIDDLEWARE:- 
+    Router-level middleware works in the same way as application-level middleware, except it is bound
+    to an instance of express.Router()
+    A middleware function with no mount path. The function is executed every time the app receives a
+    request.
+
+    EXAMPLE :- 
+        router.use(function (req, res, next) {
+            console.log('Logged')
+            next()
+        })
+
+    with path 
+        router.use('student/', function (req, res, next) {
+            console.log('Logged')
+            next()
+        })
+
+
+PREFERED WAY 
+    middlewares/logger-middleware.js
+        var myLogger = function (req, res, next){
+            console.log("Logged")
+            next()
+        }
+
+    routes/web.js
+        import myLogger from '../middlewares/logger-middleware.js*
+        router.use(myLogger)
+
+with path 
+    middlewares/logger-middleware.js    
+        var myLogger = function (req, res, next){
+            console.log("Logged")
+            next()
+        }
+
+    routes/web.js
+        import myLogger from '../middlewares/logger-middleware.js*
+        router.use('student/', myLogger)    
+
+
+BUILTIN MIDDLEWARE
+    express.static serves static assets such as HTML files, images, and so on.
+    express.json parses incoming requests with JSON payloads
+    express.urlencoded parses incoming requests with URL-encoded payloads.
+
+THIRD PARTY MIDDLEWARE 
+    Use third-party middleware to add functionality to Express apps.
+    npm install cookie-parser
+    import cookieParser from (cookie-parser)
+    / load the cookie-parsing middleware
+    app.use(cookieParser())
+    https://expressjs.com/en/resources/middleware.html

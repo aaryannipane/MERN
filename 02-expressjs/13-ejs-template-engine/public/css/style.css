@@ -1,0 +1,45 @@
+:root{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+nav{
+    background-color: hsl(0, 0%, 20%);
+    padding: 5px;
+}
+
+nav a{
+    display: inline-block;
+    color: aliceblue;
+    text-decoration: none;
+    margin-right: 5px;
+    padding: 20px;
+}
+nav a:hover{
+    text-decoration: underline;
+}
+
+.active{
+    background-color: aliceblue;
+    color: black;
+}
+
+h1{
+    background-color: antiquewhite;
+    text-align: center;
+}
+
+.box{
+    height: 50px;
+}
+
+footer{
+    width: 100%;
+    height: 50px;
+    background-color: hsl(0, 0%, 20%);
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 1px;
+}

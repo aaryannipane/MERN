@@ -37,7 +37,7 @@ CREATING ROUTES FOR TEMPLATE FILES
 
     app.js
     app.get('/', function (req, res){
-        res.render('index')
+        res.render('index.ejs')
     })
 
     routes/web.js
@@ -52,9 +52,9 @@ CREATING ROUTES FOR TEMPLATE FILES
     NOTE :- 
         - If the view engine property is not set, you must
         specify the extension of the view file.
-        app.set(view engine', 'ejs')
+        app.set('view engine', 'ejs')
 
-        router.get(", function (req, res) {
+        router.get("/", function (req, res) {
             res.render('index.ejs")
         })
 
@@ -66,7 +66,7 @@ render() :-
     res.render()-It renders a view and sends the rendered HTML string to the client.
     Syntax:- res.render(view, [, locals], [, callback])
 
-    view - The view argument is a string that is the file path of the vicw file to render.
+    view - The view argument is a string that is the file path of the view file to render.
 
     This can be an absolute path, or a path relative to the views setting.
 

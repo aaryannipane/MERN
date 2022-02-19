@@ -1,0 +1,99 @@
+EJS Template Engine
+
+EJS (Embedded JavaScript) is a simple templating language that lets you generate
+HTML markup with plain JavaScript.
+    - Fast compilation and rendering
+    - Simple template tags: <% %>
+    - Custom delimiters (e.g., use [? ?] instead of <% %>)
+    - Sub-template includes
+    - Ships with CLI
+    - Both server JS and browser support
+    - Static caching of intermediate JavaScript
+    - Static caching of templates
+    - Complies with the Express view system
+
+
+
+Displaying Data - You may display data that is passed to your views by wrapping the variable in <%= %>
+Example: <%= name %>
+
+Comment- EJS also allows you to define comments in your views. However, unlike HTML comments,
+EJS comments are not included in the HTML returmed by your application.
+Example:  <%# This comment will not be present in the rendered HTML %>
+
+
+IF :-
+
+If evaluates a variable, and if that variable is "true" (i.e. exists, is not empty, and is not a false boolean
+value).
+Syntax:
+    <% if (variable) { %>
+        ** ***
+    <% } %>
+
+Example:
+    <% if (name) { %>
+        </h1>Hello <%= name %></h1>
+    <% } %>
+
+CONDITIONAL:- 
+
+if
+    <%if (condition) { %>
+        ....
+    <% } %>
+
+if.. else..
+    <% if (condition) { %>
+        ...
+    <% } else { %>
+        ...
+    <% } %>
+    
+if.. else if... else...
+    <% if (condition) { %>
+        ....
+    <% } else if (condition){ %>
+        ...
+    <% } else { %>
+        ....
+    <% } %>
+
+
+LOOPS :- 
+
+for
+    <% for (initial; condition; incr/decr) { %>
+        ...
+    <% } %>
+
+for in
+    <% for (const key in data ){ %>
+        ...
+    <% } %>
+
+while
+    <% while (condition) { %>
+        ...
+    <% } %>
+
+forEach
+    <% data.forEach((item)=>{ %>
+        ...
+    <% }) %>
+
+
+INBUILT FUNCTION CALL:- 
+<% var currentDate = new Date(); %>
+<%= currentDate %>
+
+
+INCLUDE TEMPLATE
+    include- Include are relative to the template with the include call.
+    Syntax:
+        <%- include(filename, object) %>
+        <%- include(folder/filename, object) %>
+
+    Example:
+        <%- include('footer', {name: 'Sonam'}) %>
+        <%- include('myfolder/footer, {name: "Sonam"}) %>
