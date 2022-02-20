@@ -1,0 +1,9 @@
+NOT RECOMMENDED TO USE THIS METHOD
+
+
+to use react we have to link react and reactDOM links from this https://reactjs.org/docs/cdn-links.html link we can get the links 
+
+copy that link and paste it in our html page
+
+and we also use babel for old browser support for latest javascript code 
+we have to link babel too in the html page

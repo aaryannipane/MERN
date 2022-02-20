@@ -1,0 +1,17 @@
+WHAT IS REACT JS
+    React JS is a JavaScript Library for building front end application
+    or user interfaces (UI).
+    ReactJS allows us to create reusable UI components.
+
+    Component - Components are the building blocks of any React app.
+
+    It is created by Facebook.
+
+
+ADVANTAGE OF REACT 
+    - Reusable Components
+    - Open Source
+    - Efficient and Fast
+    - Works in Browser
+    - Large Community
+
