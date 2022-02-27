@@ -1,1 +1,38 @@
 REQUIREMENTS
+
+NPM- It is used to take advantage of a vast ecosystem of third-party packages, and
+easily install or update them.
+
+Webpack - webpack is a static module bundler for modern JavaScript applications.
+When webpack processes your application, it internally builds a dependency graph
+which maps every module your project needs and generates one or more bundles.
+
+Babel - Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code
+into a backwards compatible version of JavaScript in current and older browsers or
+environments.
+
+
+CREATE REACT APP:- 
+    Create React App is a tool, built by developers at Facebook that gives you a massive
+    head start when building React apps. It saves you from time consuming setup and
+    configuration. You simply run one command and Create React App sets up the tools
+    you need to start your React project.
+
+    Syntax:- 
+    npx create-react-app my-app
+
+    for win 7 32bit use 
+    npx create-react-app@3.4.0 my-app
+
+
+- Installs the latest version of React, React-DOM and react-scripts.
+React, JSX, ES6, TypeScript and Flow syntax support.
+- Autoprefixed CSS, so you don't need -webkit- or other prefixes.
+- Installs the dependencies needed to build project
+- Zero Setup and Configuration Required
+- Webpack - It configuring Webpack to bundle your project assets.
+- Babel-It transpile JSX into browser-ready code.
+Creates the initial project structure
+Development Server
+- Built-in Testing - Jest testing framework
+Create React App provides helpful runtime error messages in the browser
