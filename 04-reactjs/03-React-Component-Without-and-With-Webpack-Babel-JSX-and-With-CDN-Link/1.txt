@@ -32,3 +32,28 @@ React.createElement(type, props, children) :-
 
 render() METHOD :- 
     
+    The render() method is the only required method in a class component. It examines this.props and
+    this.state. It returns one of the following types:
+    React elements - These are created via JSX(Not required).
+    For example, <div /> and <App /> are React elements that instruct React to render a DOM node,
+    or another user-defined component, respectively.
+
+    Arrays and fragments - It is used to return multiple elements from render.
+
+    Portals - it is used to render children into a different DOM subtree.
+
+    String and numbers - These are rendered as text nodes in the DOM.
+
+    Booleans or null - It renders nothing. (Mostly exists to support return test && <Child /> pattern,
+    where test is boolean.)
+
+
+ReactDOM.render(element, DOMnode):- 
+
+    ReactDom.render(element, DOMnode) - It takes a React Element and render it
+    to a DOM node.
+    Syntax:- ReactDom.render(element, DOMnode)
+    - The first argument is which component or element needs to render in the dom.
+    - The second argument is where to render in the dom.
+    Ex:
+    ReactDom.render(< App />, document.getElementByld("root"));

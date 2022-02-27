@@ -4,22 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
     <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+
+
     <title>React JS</title>
 </head>
 <body>
     <div id="root"></div>
 
 
-    <script>
+    <script type="text/babel">
 
         class App extends React.Component{
             render(){
-                return React.createElement()
+                // return (React.createElement('div', null, 'Hello React'));
+                
+                // jsx code when using babel
+                return (
+                    <div>
+                        <h1>Hello React</h1>
+                    </div>
+                )
             }
         }
+        // ReactDOM.render(React.createElement(App, null), document.getElementById('root'));
 
+        // when babel is included
+        ReactDOM.render(<App/>, document.getElementById('root'));
     </script>
 
 </body>
