@@ -36,7 +36,7 @@ Example:
         </h1>Hello <%= name %></h1>
     <% } %>
 
-CONDITIONAL:- 
+CONDITIONAL:-
 
 if
     <%if (condition) { %>
@@ -49,7 +49,7 @@ if.. else..
     <% } else { %>
         ...
     <% } %>
-    
+
 if.. else if... else...
     <% if (condition) { %>
         ....
@@ -60,7 +60,7 @@ if.. else if... else...
     <% } %>
 
 
-LOOPS :- 
+LOOPS :-
 
 for
     <% for (initial; condition; incr/decr) { %>
@@ -83,7 +83,7 @@ forEach
     <% }) %>
 
 
-INBUILT FUNCTION CALL:- 
+INBUILT FUNCTION CALL:-
 <% var currentDate = new Date(); %>
 <%= currentDate %>
 
