@@ -1,0 +1,40 @@
+CREATE DOCUMENT 
+    // Defining Schema
+    const studentschema = mongoose.schema({name: String})
+
+    // Compiling Schema
+    const StudentModel = mongoose.model("Student", studentSchema);
+
+    // Creating New Document
+    const studentDoc = new StudentModel ({
+        name: "Sonam"
+    })
+
+    // Saving Document
+    await studentDoc.save()
+
+
+
+save():-  It is used to save document by inserting a new document into the database if document.isNew is true, or sends an updateOne operation only with the modifications to the database, it does not replace the whole document in the latter case.
+It returns undefined if used with calback or a Promise otherwise.
+
+    Example:
+        // old method
+        studentDoc.save((er, result)=>{
+            if(er){
+                console.log(err);
+            }else{
+                console.log(result);
+            }
+        )
+
+        // new method
+        const result= await studentLDoc.save()
+        console.log(result)
+
+    Mongoose validates modified paths before saving. If you set a field
+    to an invalid value, Mongoose will throw an error when you try to
+    save() that document.
+
+    to not throw error use :-
+    const result = await studentDoc.save({ validateBeforeSave: false }

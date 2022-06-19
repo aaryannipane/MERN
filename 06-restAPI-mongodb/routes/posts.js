@@ -14,7 +14,7 @@ router.get('/', async (req, res)=>{
 })
 
 
-// submit a post
+// submit a post using post method
 router.post("/", async (req, res)=>{
     console.log(req.body);
 

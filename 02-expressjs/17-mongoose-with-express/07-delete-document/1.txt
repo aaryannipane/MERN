@@ -1,0 +1,22 @@
+DELETE DOCUMENT
+
+    findByldAndDelete)- It finds a matching document then deletes it.
+
+    Syntax:- findByIdAndDelete(id, options, callback)
+    id can be object, number or string.
+
+    Example:- findByIdAndDelete("32412dsfsd323")
+    Example:- findByIdAndDelete({_id: "3241zdsfsd323"})
+
+    deleteOne()-It is used to delete single document. MongoDB will delete only the first document that matches conditions
+
+    Syntax- deleteOne(conditions, options, callback)
+    Example:- deleteOne({_id: "324f72dsfsd323"})
+    Example:- decleteOne({_id: "32412dsfsd323", age: 27})
+
+    deleteMany() - It is used to delete multiple document. MongoDB will delete all doeuments that match conditions.
+
+    Syntax:- deleteMany(conditions, options, callback)
+
+    Example: deleteMany( {age: 27})
+    Example:- deleteMany( {name: "Sonam", age: 27})

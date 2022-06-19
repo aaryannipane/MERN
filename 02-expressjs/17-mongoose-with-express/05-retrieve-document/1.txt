@@ -1,0 +1,8 @@
+RETRIEVE DOCUMENT
+
+find()- The find() method returns all occurrences in the sclection.
+
+Syntax:- find(filter object, projection object, options_object, callback)
+
+Example:
+    await StudentModel.find({ name: "Sonam'}, {name: 1, age:1}, {skip: 5})

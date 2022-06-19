@@ -1,0 +1,158 @@
+SCHEMA 
+
+A document schema is a JSON object that allows you to define the shape and content of documents
+and embedded documents in a collection. You can use a schema to require a specific set of fields,
+configure the content of a field, or to validate changes to a document based on its beginning and
+ending states.
+
+name:{type: String, required: true, trim: true },
+age:{type: Number, required: true, min: 18, max: 50 },
+fees: {type: mongoose . Decimal128},
+join: {type: Date, default: Date.now}
+
+
+DEFINING IN SCHEMA
+    Everything in Mongoose starts with a Schema. Each schema maps to a MongoDB collection and defines the shape of the documents within that collection.
+    By default, Mongoose adds an id property to your schemas.
+
+    Syntax:
+        import mongoose from 'mongoose'
+        const nameSchema = new mongoose.Schema({
+            key1: String, // String is shorthand for {type: String}
+            key2: Number,
+            key3: mongoose.Decimal128,
+            key4: [String],
+            key5: Boolean,
+            key6: [{ key: String, key: Date }],
+            key7: Date
+        })
+
+    Example:-
+        import mongoose from 'mongoose
+        const studentSchema = new mongoose.Schema({
+            name: {type:String},
+            age: {type:Number),
+            fees: {type:mongoose.Decimal 128),
+            hobbies: {type:Array},
+            isactive: {type:Boolean},
+            comments: [{ value: {type:String), publish: {type:Date} }].
+            join: {type:Date}
+        })
+
+_id  PROPERTY
+    When you create a new document with the automatically added_id property, Mongoose creates a new_id of type ObjectId to your document.
+    ObjectId is encode the local time at which they were created. That means you can usually pull the time that a document was created from its _Id.
+    You can also overwrite Mongoose's default_id with your own_id.
+    Mongoose will refuse to save a document that doesn't have an _id, so you're responsible for setting _id if you define your own id path.
+
+TYPE 
+    type is a special property in Mongoose schemas. When Mongoose finds a nested property named type in your schema, Mongoose assumes that it needs to define a SchemaType with the given type.
+    String
+    Number
+    Date
+    Buffer
+    Boolean
+    Mixed
+    ObjectId
+    Array
+    Decimal128
+    Map
+    Schema
+
+
+STRING 
+    lowercase: boolean, whether to always call .toLowerCase() on the value
+    uppercase: boolean, whether to always call toUpperCase() on the value
+    trim: boolean, whether to always call trim) on the value
+    match: RegExp, creates a validator that checks if the value matches the given regular expression
+    enum: Array, creates a validator that checks if the value is in the given array.
+    minLength: Number, creates a validator that checks if the value length is not less than the given number
+    maxLength: Number, creates a validator that checks if the value length is not greater than the given number
+    populate: Object, sets default populate options
+
+NUMBER 
+    min: Number, creates a validator that checks if the value is greater than or cqual to the given minimum.
+    max: Number, creates a validator that checks if the value is less than or equal to the given maximum.
+    enum: Array, creates a validator that checks if the value is strictly equal to one of the values in the given array.
+    populate: Objcct, sets default populate options
+
+DATE 
+    min: Date
+    max: Date
+
+
+BOOLEAN 
+    Mongoose casts the bclow values to true:
+        true
+        'true'
+        '1'
+        1
+        'yes'
+    Mongoose casts the below values to false:
+        false
+        "false'
+        '0'
+        0
+        'no'
+
+    
+ALL SCHEMA TYPES
+    required: boolean or function, if true adds a required validator for this property
+    default: Any or function, sets a default value for the path. If the value is a function, the return value of the
+    function is used as the default.
+    select: boolean, specifies default projections for queries
+    validate: function, adds a validator function for this property
+    get: function, defines a custom getter for this property using Object.defineProperty).
+    set: function, defines a custom setter for this property using Object.defincProperty).
+    alias: string, mongoose >=4.10.0 only. Defines a virtual with the given name that gets/sets this path.
+    immutable: boolean, defines path as immutable. Mongoose prevents you from changing immutable paths unless
+    the parent document has isNew: true.
+    transform: function, Mongoose calls this function when you call Document#toJSON) function, including when you JSONstringify() a document.
+
+
+DEFINING SCHEMA 
+    Example:-
+        import mongoose from 'mongoose
+        const studentschema =new mongoose.Schema({
+            name: {type:String, required:true},
+            age: {type: Number, min: 18, max: 65 },
+            fees: {type:mongoose.Decimal 128, validate:v = > v >= 5500.50},
+            hobbies: {type:Array},
+            isactive: {type:Boolean},
+            comments: [{ value: {type:String}, publish: {type:Date) }],
+            join: { type: Date, default: Date.now }
+        })
+
+SCHEMA.PATH()
+    The schema.path() function returns the instantiated schema type for a given path.
+    Example:- studentSchema.path('age')
+
+
+
+MODEL 
+    Models are fancy constructors compiled from Schema definitions. An instance of a model is called a document.
+    Models are responsible for creating and reading documents from the underlying Mongo DB database.
+
+
+    Compiling Schema
+        const studentSchema = mongoose.schema({})
+        const Student = mongoose.model('Student', studentSchema);
+
+        The first argument is the singular name of the collection your model is for. Mongoose automatically looks for the plural, lowercased version of your model name. Thus, for the example above, the model Student is for the students collection in the database.
+
+    
+CREATE DOCUMENT USING MODEL
+
+    // Defining Schema
+    const studentSchema = mongoose.schema({name:String})
+
+    // Compiling Schema
+    const Student = mongoose.model('Student', studentSchema);
+
+    // Creating Document
+    const stu = new Student({
+        name: 'Sonam'
+    })
+    
+    // Saving Document
+    await stu.save()

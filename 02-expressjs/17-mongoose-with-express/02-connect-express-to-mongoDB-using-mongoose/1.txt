@@ -1,6 +1,6 @@
 CONNECT MONGO DB USING MONGOOSE
 
-connect)-Mongoose requires a connection to a MongoDB database. You can connect to a locally hosted
+connect()-Mongoose requires a connection to a MongoDB database. You can connect to a locally hosted
 database with mongoOSe.connectO
 
 Syntax:- connect(url, options, callback)
@@ -10,7 +10,7 @@ Syntax:- connect(url, options, callback)
     callback It's a callback function.
 
 Example:-
-    mongoose.connect("mongodb://localhost:2701 7/schooldb")
+    mongoose.connect("mongodb://localhost:27017/schooldb")
     mongoose.comnet("mongodb:/localhost:27017/schooldb",{
         useNewUrlParser: true,
         useUnifiedTopology: true

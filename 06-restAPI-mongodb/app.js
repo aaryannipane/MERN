@@ -11,6 +11,7 @@ const postsRoute = require('./routes/posts');
 
 // (MIDDLEWARES)
 app.use(cors()); // for cross domain acess to out api 
+
 // to parse the post data into json
 app.use(bodyParser.json());
 

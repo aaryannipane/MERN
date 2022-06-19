@@ -1,0 +1,51 @@
+COOKIE-PARSER
+
+    cookie-parser is a middleware which parses cookies attached to the client request object.
+    Parse Cookie header and populate req.cookies with an object keyed by the cookie names.
+    npm i cookie-parser
+
+    import cookieParser from 'cookie-parser'
+    // var cookieParser = require('cookie-parser')
+    app.usc(cookieParser())
+
+
+res.cookie():-
+
+    res.cookie (0- It is used to set cookie name to value. The value parameter may be a string or object converted to JSON.
+
+    Syntax- res.cookie(name, value [, options])
+
+    Example:-
+    res.cookie("username", "geekyshows")
+    res.cookie("cart", 5)
+    res.cookie("cart", { items: [1, 2, 3] })
+    res.cookie("username,"geekyshows, {maxAge: 5000}) // 5ms
+    res.cookie("username", "geckyshows", {expires: new Date(Date.now) + 900000), httpOnly: true})
+    res.cookie("username", "geckyshows", {path: "/admin"})
+
+
+res.cookies :-
+
+    req.cookies - This property is used to get cookies.
+    When using cookie-parser middleware, this property is an object that contains cookies sent by the request. If the
+    request contains no cookies, it defaults to {}
+
+    Example:
+        req.cookies
+        req.cookies.username
+        req.cookies.cart
+
+
+res.clearCookie() :- 
+
+    res.clearCookie () - It is used to Clears the cookie specificd by name.
+    Web browsers and other compliant clients will only clear the cookie if the given options is identical to those
+    given to res.cookie(), excluding expires and maxAge.
+    
+    Syntax:- res.clearCookie(name [, options]))
+
+    Example:-
+        res.clearCookie("username")
+
+        res.cookie("username"', "geekyshows", { path: '/admin'})
+        res.clearCookie("username",{ path: /admin' })

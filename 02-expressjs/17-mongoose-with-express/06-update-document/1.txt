@@ -1,0 +1,29 @@
+UPDATE DOCUMENT
+
+    Each model has its own update method for modifying documents in the database without returning them to your application.
+
+    findByIdAndUpdate()-It finds a matching document, updates it according to the update arg, passing any options, and retums the found document (if any) to the callback. The query executes if callback is passed.
+
+    Syntax:- findByldAndUpdate(id, update, options, callback)
+        id can be object, number or string
+
+    Example:- findByIdAndUpdate("324172dsfsd323", {name: "Sunil"}, {returnDocument: "after"})
+
+    Example:- findByldAnd Updlate("324172dsfsd323", { $set: (name: "Sunil"}}, {returnDocument: "after"})
+
+    updateOne()-It is used to update single document. MongoDB will update only the first filter regardless of the value of the multi option.
+
+    Syntax- updatcOnc(filter, update, options, callback)
+
+    Example:- updateOne( {id: "324f12dsfsd323"}, {name: "Sunil"}, {upsert: true})
+
+    upsert :- If true, and no documents found, insert a new document.
+
+
+Update Multiple document
+
+    updateMany() - It is used to update multiple document. MongoDB will update all documents that match filter regardless of the value of the multi option.
+
+    Syntax:- updateMany(filter, update, options, callback)
+
+    Example:- updateMany({age: 27}, {fname: "Sunil"}, {upsert: true })
