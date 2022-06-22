@@ -1,0 +1,14 @@
+.env file is use to store secure data init
+and can't seen by outsider
+
+install package dotenv
+npm i dotenv
+
+to access .env file from our js file
+
+
+import dotenv from "dotenv";
+dotenv.config();
+
+
+process.env.PORT
