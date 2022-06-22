@@ -1,0 +1,12 @@
+import express from "express";
+import StudentController from "../controllers/studentController.js";
+
+const router = express.Router();
+
+
+router.get("/sessionexample", StudentController.session_example);
+router.get("/getsessiondata", StudentController.get_session_data);
+
+
+export default router
+

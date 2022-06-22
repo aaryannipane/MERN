@@ -1,0 +1,30 @@
+
+MIDDLEWARE TO TAKE DATA FROM FORM TO EXPRESS
+
+urlencoded() :- 
+    express.urlencoded([options])- This is a built-in middleware function in Express. It parses incoming requests
+    with urlencoded payloads and is based on body-parser.
+    This parser accepts only UTF-8 encoding of the body and supports automatic inflation of gzip and deflate
+    encodings.
+    A new body object containing the parsed data is populated on the request object after the middleware (i.e.
+    req.body), or an empty object ({}) if there was no body to parse, the Content-Type was not matched, or an error
+    occurred.
+    This object will contain key-value pairs, where the value can be a string or array (when extended is false), or any
+    type (when extended is true).
+    type - This is used to determine what media type the middleware will parse.
+    express.urlencoded( {type: "application/x-www-form-urlencoded"} )
+    extended- This option allows to choOse between parsing the URL-encoded data with the querystring library
+    (when false) or the qs library (when true).
+    express.urlencoded({extended:true})
+
+
+
+redirect() method:- 
+
+    res.redircct([status,] path) - It redirccts to the URL derived from the specificd path, with specificd status, a
+    positive integer that corresponds to an HTTP status code . If not specified, status defaults to "302 "Found",
+
+    res.redirect("/student/success")
+    res.redirect("http://example.com")
+    res.redireet301, 'http://example.com')
+    res.redirect('../login')
