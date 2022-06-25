@@ -9,12 +9,13 @@ urlencoded() :-
     A new body object containing the parsed data is populated on the request object after the middleware (i.e.
     req.body), or an empty object ({}) if there was no body to parse, the Content-Type was not matched, or an error
     occurred.
-    This object will contain key-value pairs, where the value can be a string or array (when extended is false), or any
-    type (when extended is true).
+    This object will contain key-value pairs, where the value can be a string or array (when extended is false), or any type (when extended is true).
+
     type - This is used to determine what media type the middleware will parse.
     express.urlencoded( {type: "application/x-www-form-urlencoded"} )
-    extended- This option allows to choOse between parsing the URL-encoded data with the querystring library
-    (when false) or the qs library (when true).
+
+    extended- This option allows to choose between parsing the URL-encoded data with the querystring library (when false) or the qs library (when true).
+
     express.urlencoded({extended:true})
 
 

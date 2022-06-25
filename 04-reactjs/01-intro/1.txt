@@ -1,6 +1,5 @@
 WHAT IS REACT JS
-    React JS is a JavaScript Library for building front end application
-    or user interfaces (UI).
+    React JS is a JavaScript Library for building front end application or user interfaces (UI).
     ReactJS allows us to create reusable UI components.
 
     Component - Components are the building blocks of any React app.
