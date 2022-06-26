@@ -1,8 +1,11 @@
 const express = require('express');
 const multer = require('multer');
+const cors = require("cors");
 
 const app = express();
 const port = process.env.PORT || "3000";
+
+app.use(cors());
 
 const fileStorageEngine = multer.diskStorage({
     destination: (req, file, cb) =>{
@@ -24,7 +27,8 @@ app.get('/', (req, res)=>{
 // to upload  single image file (image is used for name or key used in form input)
 app.post('/single', upload.single("image"), (req, res)=>{
     console.log(req.file);
-    res.send("Single file upload success");
+    // res.status(200).send(`Single file upload success ${req.file.path}`);
+    res.status(200).json(req.file.path);
 })
 
 
