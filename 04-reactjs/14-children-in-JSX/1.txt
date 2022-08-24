@@ -1,0 +1,7 @@
+Children in JSX 
+
+In JSX expressions that contain both an opening tag and a closing tag, the content between those tags is passed as a special prop:
+props.children.
+
+Ex:- <Student>l am child</Student>
+props.children   // i am child

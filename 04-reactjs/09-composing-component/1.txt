@@ -1,0 +1,20 @@
+Composing Components
+
+Components can refer to other components in their output. 
+This lets us use the same component abstraction for any level of detail.
+
+
+Ex:
+  function Student(){
+    return <h1>Hello Rahul</h1>
+  }
+  
+  function App(){
+    return(
+      <div>
+        <Student/>
+        <Student/>
+        <Student/>
+      </div>
+    )
+  }

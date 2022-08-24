@@ -1,0 +1,5 @@
+CONTEXT TYPE:-
+The contextType property on a class can be assigned a Context
+object created by React.createContext(). This lets you consume
+the nearest current value of that Context type using this.context.
+static contextType = MyContext;

@@ -1,0 +1,23 @@
+css modules
+
+CSS Modules let you use the same CSS class name in different files without worrying about naming clashes.
+CSS files in which all class names and animation names are scoped locally by default.
+CSS Modules allows the scoping of CSS by automatically creatingaunique classname of the
+format [filename]\_[classname]\_\_[hash]
+
+Syntax:
+    [name].module.css
+Ex:
+FileName: App.module.css
+
+import styles from "./App.module.css"
+
+
+CSS IN JS
+"CSS-in-JS" refers to a pattern where CSS is composed using JavaScript
+instead of defined in external files.This functionality is not a part of React,but
+provided by third-party libraries.
+   Glamorous
+   Styled Component
+   Radium
+   Emotion

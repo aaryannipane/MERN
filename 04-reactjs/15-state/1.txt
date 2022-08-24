@@ -1,0 +1,59 @@
+state in reactjs
+
+State is similar to props, but it is private and fully controlled by the component. 
+We can create state only in class component. It is possible to update the state/Modify the state.
+
+There are two way to initialize state in React Component :-
+Directly inside class
+Inside the constructor
+
+
+DIRECTLY INSIDE CLASS:-
+
+  class Student extends Component{
+    // States Here it is a class property
+    state = {
+      name: "Rahul",
+      prop1: this.props.prop1
+    }
+    render(){
+    }
+  }
+
+  Note-
+  The state property is referred as state.
+  This is a class instance property.
+
+
+INSIDE THE CONSTRUCTOR:-
+  class Student extends Component{
+    constructor(props){
+      //It is required to call the parent class constructor
+      super(props);
+
+      //States
+      this.state = {
+        name: "Rahul",
+        prop1: this.props.prop1
+      }
+
+      render(){
+      }
+  }
+
+
+When the component class is created, the
+constructor is the first method called, so
+it's the right place to add state.
+
+The class instance has already been
+created in memory, so you can use this to
+set properties on it.
+
+When we write a constructor, make sure
+to call the parent class' constructor by
+super(props)
+
+When you call super with props. React
+will make props available across the
+component through this.props

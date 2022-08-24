@@ -1,0 +1,44 @@
+PROPS:- 
+
+  When React sees an element representing a user-defined component, it passes JSX attributes to
+  this component as a single object. We call this object "props".
+
+  function Student(props){
+    return ( 
+      <div>
+        <h1>Hello, {props.name}</h1>;
+        <h2>Your Roll: {props.roll}</h2>;
+      </div>
+    );
+  }
+
+  ReactDOM.render(<Student name="Rahul" roll="101"/>, document.getElementByld('root"));
+  ReactDOM.render(<Student name={userName} roll="101"/>, document.getElementByld('root"));
+
+NOTE:-  
+  if you pass no value for a props it defaults to true
+
+
+
+class App extends Component{
+  render(){
+    return (
+      <h1>Hello {this.props.name}</h1>
+    )
+  }
+}
+
+
+
+Whether you declare a component as a function or a class, it must never modify its own props.
+All React components must act like pure functions with respect to their props.
+
+Pure Function
+function sum(a, b) {
+  return a+b;
+}
+
+Impure Function
+function withdraw(account, amount) {
+  account.total -= amount;
+}

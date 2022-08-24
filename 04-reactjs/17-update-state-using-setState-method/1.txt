@@ -1,0 +1,21 @@
+Update State using setState Method in React JS
+
+
+setState() Method is used to update states.
+Ex:-
+  this.state = {name: "Rahul"}
+
+  this.setState({name: "Jai"});
+
+
+
+UPDATE STATE :- 
+  this.setState(function(state, props) {
+    return{
+
+    }
+  }
+
+  -It accepts a function rather than an object.
+  -It receives the previous state as the first argument,
+  -The props at the time the update is applied as the second argument.

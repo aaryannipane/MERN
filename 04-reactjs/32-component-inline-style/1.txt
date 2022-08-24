@@ -1,0 +1,22 @@
+Styling Component/React with CSS
+
+Inline Stylesheet
+External Stylesheet
+CSS Module
+CSS in JS
+
+Inline Stylesheet :- 
+style is most often used in React applications to add dynamically-computed styles at render time
+The style attribute accepts a JavaScript object with camelCased properties rather than a CSS
+string.This is consistent with the DOM style JavaScript property,is more efficient,and prevents
+XSS security holes.
+CSS classes are generally better for performance than inline styles.
+styles are not autoprefixed.Vendor prefixes other than ms should begin withacapital letter e.g.
+Webkit Transition has an uppercase"W"
+
+Ex:
+const btnStyle={
+    color:'blue',
+    backgroundColor:'orange',
+};
+<button style={btnStyle}>Button</button>;

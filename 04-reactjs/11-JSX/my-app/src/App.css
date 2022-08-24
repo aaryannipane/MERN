@@ -1,0 +1,9 @@
+body{
+  background: grey;
+}
+
+.bg-dark{
+  background: #000;
+  color: white;
+  text-align: center;
+}

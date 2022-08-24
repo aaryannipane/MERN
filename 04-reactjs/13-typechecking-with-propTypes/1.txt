@@ -1,0 +1,45 @@
+Typechecking with PropTypes in React JS
+
+install prop-types package
+npm i prop-types
+
+
+To run typechecking on the props for a component, you can assign the special proplypes property.
+
+Ex:
+import PropTypes from 'prop-types';
+
+Student.propTypes ={
+  name: PropTypes.string
+}
+
+Note-
+  When an invalid value is provided for a prop, a warning will be shown in the JavaScript console.
+
+  For performance reasons, propIypes is only checked in development mode.
+
+
+PropTypes exports a range of validators that can be used to make sure the data you receive is valid.
+
+optionalArray: PropTypes.array,
+optionalBool: PropTypes.bool,
+optionalFunc: PropTypes. func,
+optionalNumber: PropTypes.number,
+optionalObject: PropTypes.object,
+optionalString: PropTypes.string,
+optionalSymbol: PropTypes.symbol,
+
+
+REQUIRED:- 
+  import PropTypes from 'prop-types';
+  Student.propTypes ={
+    name: PropTypes.string.isRequired
+  }
+
+
+DEFAULT PROP VALUES:-
+  You can define default values for your props by assigning to the special defaultProps property.
+
+  Student.defaultProps ={
+    name: 'GeekyShows'
+  }  

@@ -1,0 +1,9 @@
+for using bootstrap
+
+1 -> link bootstrap in index.html file in public folder
+2 -> install package using npm and use css files of bootstrap
+    npm i bootstrap 
+    import "../node_modules/bootstrap/dist/css/bootstrap.css"
+3 -> install package react-bootstrap and use component that are made using bootstrap and react 
+    npm i react-bootstrap bootstrap
+    import {Button} from "react-bootstrap"

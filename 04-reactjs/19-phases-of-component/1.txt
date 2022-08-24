@@ -1,0 +1,13 @@
+Phases of Component in React JS
+
+Mounting- Mounting is the process of creating an element and inserting it
+in a DOM tree.
+
+Updating-Updating is the process of changing state or porps of
+component and update changes to nodes already in the DOM.
+
+Error Handling - These are used when there is error during rendering, in
+lifecycle method or in the constructor of any child component.
+
+Unmounting - Unmounting is the process of removing components from
+the DOM.

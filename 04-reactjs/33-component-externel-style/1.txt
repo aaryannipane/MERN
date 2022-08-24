@@ -1,0 +1,12 @@
+App.css
+.txt{
+    color:blue;
+}
+App.js
+import'./App.css';
+<h1 className="txt">Hello App</h1>
+Note:
+    Use className not class eg : className="txt" // // This tells Webpack that App.js uses these styles.
+    Pass a string as the className prop.
+    It is common for CSS classes to depend on the component props or state.
+    In production,all CSS files will be concatenated into a single minified .css file in the build output.

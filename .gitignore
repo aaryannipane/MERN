@@ -1,5 +1,7 @@
 db/connectdb.js
 
+node_modules
+
 *.env
 
 .env

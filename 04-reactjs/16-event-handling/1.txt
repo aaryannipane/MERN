@@ -1,0 +1,74 @@
+Event Handling in reactjs
+
+The actions to which JavaScript can respond are called Events.
+
+Clicking an element
+Submitting a form
+Scrolling page
+Hovering an element
+
+
+Handling events with React elements is very similar to handling events on DOM
+elements. There are some syntactic differences:
+  - React events are named using camelCase, rather than lowercase.
+  - With JSX you pass a function as the event handler, rather than a string.
+
+In HTML
+  <button onclick="handleClick()">Click Me</button>
+
+In React
+<button onClick={handleClick}>Click Me</button>        // Function Component
+<button onClick={this.handleClick}>Click Me</button>    // Class Component
+
+
+You cannot return false to prevent default behavior in React. You must call
+preventDefault explicitly.
+
+In HTML
+  <a href="#" onclick="console.log('Clicked.'); return false"> Click me </a>
+
+In React
+  function handleClick(e) {
+    e.preventDefault();
+    console.log('Clicked.');
+  }
+
+  <a href="#" onClick={handleClick}>Click me</a>
+
+
+
+REACT EVENT LIST:-
+
+Mouse events
+onClick, onContextMenu, onDoubleClick, onDrag, onDragEnd, onDragEnter, onDragExit, onDragLeave, onDragOver, onDragStart, onDrop, onMouseDown, onMouseEnter, onMouseLeave, onMouseMove, onMouseOut, onMouseOver, onMouseUp
+
+Keyboard events
+onKeyDown, onKeyPress, onKeyUp
+
+Clipboard events
+onCopy, onCut, onPaste
+
+Form events
+onChange, onInput, onSubmit
+
+Focus events
+onFocus, onBlur
+
+Touch events
+onTouchCancel, onTouchEnd, onTouchMove, onTouchStart
+
+UI events
+onScroll
+
+Wheel events
+onWheel
+
+Selection events
+onSelect
+
+Image events	
+onLoad, onError
+
+Animation events
+onAnimationStart, onAnimationEnd, onAnimationIteration
+Transition events	onTransitionEnd

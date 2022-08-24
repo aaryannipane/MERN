@@ -1,0 +1,55 @@
+render Method createElement Method and ReactDOM render Method in React JS 
+
+
+render() METHOD:- 
+  The render() method is the only required method in a class component. It examines this.props and this.state.
+  It returns one of the following types:
+    React elements These are created via JSX(Not required).
+    For example, <div /> and <App /> are React elements that instruct React to render a DOM node, or another
+    user-defined component, respectively.
+
+  Arrays and fragments - It is used to return multiple elements from render.
+  Portals - It is used to render children into a different DOM subtree.
+  String and numbers - These are rendered as text nodes in the DOM.
+  Booleans or null - It renders nothing. (Mostly exists to support return test && <Child /> pattern, where test is
+  boolean.)
+
+  Note - The render() function should be pure, meanig that it does not modify component state, it returns the
+  same result each time it's invoked, and it does not directly interact with the browser.
+
+
+React Element :- 
+  You can create a react element using React.createElement(0 method but there 1s a easy
+  way to create element via JSX.
+
+  Using createElement() Method
+    React.createElement("hl", null, "Hello GeckyShows");
+
+  Using JSX (RECOMMENDED)
+    <hl>Hello GeekyShows</hl>
+
+
+
+
+React.createElement(type, props, children) :-
+  Rcact.creatcElement(type, props, children) - It creates a React Element with the given arguments.
+
+  Syntax:- React.createElement(type, props, children)
+    type: Type of the html element or component. (example : h1,h2,p,button.etc).
+    props: The properties object.
+      Example: {style :{ color:"blue"}} or className or event handlers etc.
+    children: anything you need to pass between the dom elements.
+
+  Ex:
+    React.createElement('hl', null, 'Hello GeekyShows');
+
+
+
+ReactDOM.render(element, DOMnode):- (DEPRICATED instead use createRoot then root.render(element+))
+  ReactDOM.render(element, DOMnode) - It takes a React Element and render it to a DOM node.
+  Syntax:- ReactDOM.render(element, DOMnode)
+    The first argument is which component or element needs to render in the dom.
+    The second argument is where to render in the dom.
+
+  Ex:
+    ReactDOM.render(< App />, document.getElementByld("root");

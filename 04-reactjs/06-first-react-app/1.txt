@@ -1,5 +1,0 @@
-create react element then render it to dom 
-
-create react component 
-
-https://replit.com/join/niqyrgnbhv-aaryannipane

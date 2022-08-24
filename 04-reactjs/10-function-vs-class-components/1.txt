@@ -1,0 +1,10 @@
+Difference between Function Component and Class Component in React JS
+
+Use functional components if you are writing a presentational component
+which doesn't have its own state or needs to access a lifecycle hook. You
+cannot use setState() in your component because Functional Components are
+plain JavaScript functions,
+
+Use class Components if you need state or need to access lifecycle hook
+because all lifecycle hooks are coming from the React.Component which you
+extend from in class components.

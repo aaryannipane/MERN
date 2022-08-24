@@ -1,0 +1,79 @@
+Function Component and Class Component in React JS 
+
+
+COMPONENTS:- 
+  Components are the building blocks of any React app.
+  Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.
+  Components are like JavaScript functions. They accept arbitrary inputs
+  (called "props") and return React elements describing what should appear on the screen.
+  Always start component names with a capital letter.
+  React treats components starting with lowercase letters as DOM tags. For
+  example, <div />represents an HTML div tag, but <App /> represents a
+  component requires App to be in scope.
+
+
+FUNCTION COMPONENTS:- 
+  lt is a JavaScript function which accepts a single "props" object argument with data and
+  returns a React Element.
+
+  Syntax:- 
+    function func_name () {
+      return React Element;
+    }
+
+  Ex:
+    function Student(){
+      return <h1>Hello Rahul</h1>;
+    }
+
+    PREFERED*
+    const Student = ()=>{
+      return <h1>Hello Rahul</h1>;
+    }
+
+    const Student = (props)=>{
+      return <h1>Hello Rahul {props.name}</h1>;
+    }
+
+
+
+CLASS COMPONENT:-
+  A class component requires you to extend from React.Component. The class must implement a
+  render() member function which returns a React component to be rendered, similar to a return
+  value of a functional component. In a class-based component, props are accessible Via this.props.
+
+Syntax:
+  class class_name extends Component {
+    render(){
+      return React Element
+    }
+  }
+
+Ex:
+  class Student extends Component {
+    render(){
+      return <h1>Hello Rahul</h1>;
+    }
+  }
+
+  WITH PROPS*
+  class Student extends Component {
+    render(){
+      return <h1>Hello Rahul {this.props.name} </h1>;
+    }
+  }
+
+
+
+RENDERING COMPONENT:- 
+  ReactDOM.render(<Student />, document.getElementByld("root");
+  ReactDOM.render(<Student name="Rahul"/>, document.getElementByld ("root"));
+
+  Ex:
+    function Student(props){
+      return <h1>Hello {props.name)</h1>;
+      ReactDOM.render(<Student name="Rahul"/>, document.getElementByld("root"));
+    }
+
+When React sees an element representing a user-defined component, it passes JSX attributes to
+this component as a single object. We call this object "props.

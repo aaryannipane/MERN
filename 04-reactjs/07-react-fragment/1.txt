@@ -1,0 +1,36 @@
+React Fragment in React JS
+
+Fragment is used to group a list of children without adding extra nodes to the DOM.
+
+1)Syntax-
+  <React.Fragment>
+  </React.Fragment>
+
+Ex-
+  <React.Fragment>
+    <h1>Hello</h1>
+    <h2>GeekyShows</h2>
+  </React.Fragment>
+
+
+2)Syntax:-
+  <>
+  </>
+
+Ex-
+  <>
+    <h1>Hello</h1>
+    <h2>GeekyShows</h2>
+  </>
+
+
+
+3)Syntax:
+  <React.Fragment key={id}>
+  </React.Fragment>
+
+Ex:
+  <React.Fragment key={item.id}>
+    <h1>{item.title}</h1>
+    <p>{item.description}</p>
+  </React.Fragment>
