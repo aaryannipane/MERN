@@ -1,0 +1,10 @@
+createContext:- https://react.dev/reference/react/createContext
+video:- https://youtu.be/5LrDIWkK_Bc?si=MPYSCUN55qL91R44
+
+steps 
+1 - createContext
+2 - create component with state within and provide context with that state refer file (context/themeContext.jsx)
+3 - add that component in the root component
+4 - use that context anywhere now inside components using useContext(contextName)
+
+[-] asdsadasd

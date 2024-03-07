@@ -1,0 +1,3 @@
+install only redux using npm 
+
+we are learning first only redux 

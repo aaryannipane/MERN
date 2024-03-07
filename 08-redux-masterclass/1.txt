@@ -1,0 +1,11 @@
+https://youtu.be/1zCNdVhdvHE
+
+Libraries
+
+Redux
+React-Redux
+Redux-thunk
+Redux-Toolkit
+RTK Query
+Redux Saga
+

@@ -4,10 +4,15 @@ function App() {
   const [resourceType, setResource] = useState("posts");
   const [items, setItems] = useState([]);
 
-  // this useEffect run at every render
-  // useEffect run before state changes to different value
-  // setState -> useEffect -> value changed
+  // this useEffect run at every render 
+  // (The useEffect Hook allows you to perform side effects in your components.
+// Some examples of side effects are: fetching data, directly updating the DOM, and timers.
+// useEffect accepts two arguments. The second argument is optional.)
+
+  // useEffect run before state changes to different value **
+  // setState -> useEffect -> value changed **
   useEffect(() => {
+    // runs before every return 
     console.log("render");
   });
 
@@ -22,11 +27,13 @@ function App() {
 
   // runs onMount (first render)
   useEffect(() => {
+    // runs before return
     console.log("onMount");
   }, []);
 
   return (
     <>
+    {console.log("inside return")}
       <div>
         <button onClick={() => setResource("posts")}>Posts</button>
         <button onClick={() => setResource("users")}>Users</button>
